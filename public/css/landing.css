@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+.landing-page .inicio {
+  padding-top: 80px;
+  padding-bottom: 90px;
+  background-image: url('../img/people/banner.jpg');
+}
+
+h1.titulo {
+  font-weight: 700;
+  font-size: 38px;
+  text-shadow: none;
+  letter-spacing: -1.5px;
+}
+
+#inicio p {
+    color: #fff;
+}
+
+p.ttexto {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+
+@media (min-width: 768px) {
+
+ p.ttexto {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
