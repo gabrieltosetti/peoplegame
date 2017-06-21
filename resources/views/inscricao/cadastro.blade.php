@@ -118,7 +118,7 @@
     <script src="{{ asset('js/plugins/datapicker/bootstrap-datepicker.js') }}"></script>
 
     <!-- iCheck -->
-    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="{{ asset('js/plugins/iCheck/icheck.min.js') }}"></script>
         <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({

@@ -18,19 +18,26 @@
 <body class="gray-bg">
 
     <div class="wrapper wrapper-content animated fadeInDown">
+        <!-- Main view  -->
+        @yield('content')
+        <!-- END Main view  -->
 
-                <!-- Main view  -->
-                @yield('content')
-                <!-- END Main view  -->
+        
+        <!-- Footer -->
+        <div class="col-md-offset-3 col-md-6">
+            <div class="row">
+                <div class="col-xs-6">
+                    People Hortolândia
+                </div>
+                <div class="col-xs-6 text-right">
+                    <small>Desenvolvido por <a href="https://br.linkedin.com/in/gabriel-silva-tosetti-b56013103">Gabriel Tosetti</a></small>
+                </div>
+            </div>
+        </div>
+        <!-- END Footer -->
     </div>
 
 
-
-
-
-        <!-- Footer -->
-        @include('layouts.footer')
-        <!-- END Footer -->
 
 
     <!-- Mainly scripts -->
@@ -43,7 +50,7 @@
     <script src="{{ asset('js/inspinia.js') }}"></script>
     <script src="{{ asset('js/plugins/pace/pace.min.js') }}"></script>
 
-@yield('scripts')
+    @yield('scripts')
 
 
 </body>
