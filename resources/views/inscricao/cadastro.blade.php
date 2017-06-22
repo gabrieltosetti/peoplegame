@@ -20,7 +20,7 @@
     <div class="wrapper wrapper-content animated fadeInDown">
         <!-- Main view  -->
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+            <div class="col-sm-offset-2 col-sm-8">
                 <div class="ibox-content">
                     <form method="post" class="form-horizontal" action="{{ route('inscricao') }}">
                         <h1 class="font-bold">Inscrição</h1>
@@ -30,32 +30,37 @@
 
                         <!--NOME COMLPETO-->                        
                         <div class="form-group">
-                            <label class="col-md-4 col-lg-3 control-label">Nome Completo:</label>
-                            <div class="col-md-8 col-lg-9">
+                            <label class="col-md-3 control-label">Nome Completo:</label>
+                            <div class="col-md-9">
                                 <input type="text" class="form-control">
                             </div>
                         </div>                        
                         <!--/NOME COMPLETO-->
                         <!--EMAIL-->                        
                         <div class="form-group">
-                            <label class="col-md-4 col-lg-3 control-label">E-mail:</label>
-                            <div class="col-md-8 col-lg-9">
+                            <label class="col-md-3 control-label">E-mail:</label>
+                            <div class="col-md-9">
                                 <input type="email" class="form-control">
                             </div>
                         </div>                        
                         <!--/EMAIL-->
-                        <!--DATA DE NASCIMENTO-->                        
+                        <!--IDADE-->                        
                         <div class="form-group">
-                            <label class="col-md-4 col-lg-3 control-label">Idade:</label>
-                            <div class="col-md-8 col-lg-9">
+                            <label class="col-md-3 control-label">Idade:</label>
+                            <div class="col-md-9">
                                 <input type="number" class="form-control">
+                                <span class="help-block m-b-none">Menores de 18 anos precisam da autorização dos pais.</span>
                             </div>
-                        </div>                        
-                        <!--/DATA DE NASCIMENTO-->
+                            
+                        </div>    
+                        <div class="alert alert-info col-md-9 col-md-offset-3">
+                                <strong>Atenção:</strong> A autorização precisa ser assinada e impressa para levar no dia ! Clique <a class="alert-link" href="#">Aqui</a> e imprima.
+                            </div>                    
+                        <!--/IDADE-->
                         <!--ALUNO-->                        
                         <div class="form-group">
-                            <label class="col-md-4 col-lg-3 control-label">Você é aluno?</label>
-                            <div class="col-md-8 col-lg-9">
+                            <label class="col-md-3 control-label">Você é aluno?</label>
+                            <div class="col-md-9">
                                 <div class="i-checks">
                                     <label> <input type="radio" checked value="true" name="aluno"> <i></i> Sim </label>
                                 </div>
@@ -78,45 +83,49 @@
                         </div>
                         <p>Escolha o jogo do <strong>de cada período:</strong></p>
                         <!--JOGO MANHA-->                                              
-                        <div class="form-group">
-                            <label class="col-md-4 col-lg-3 control-label">Jogo Manhã:</label>
-                            <div class="col-md-8 col-lg-9">
-                                <div class="i-checks">
-                                    <label> <input type="radio" checked value="nao" name="manha"> <i></i>Não jogarei</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="lol" name="manha"> <i></i>League of Legends</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="cs" name="manha"> <i></i>CS 1.6</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="fifa" name="manha"> <i></i>FIFA 2016</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="jd" name="manha"> <i></i>Just Dance 2016</label>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">                            
+                                <label class="col-md-4 control-label">Jogo Manhã:</label>
+                                <div class="col-md-8">
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="nao" name="manha"> <i></i>Não jogarei</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="lol" name="manha"> <i></i>League of Legends</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="cs" name="manha"> <i></i>CS 1.6</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="fifa" name="manha"> <i></i>FIFA 2016</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="jd" name="manha"> <i></i>Just Dance 2016</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>                                         
                         <!--/JOGO MANHA-->
                         <!--JOGO TARDE-->                                              
-                        <div class="form-group">
-                            <label class="col-md-4 col-lg-3 control-label">Jogo Tarde:</label>
-                            <div class="col-md-8 col-lg-9">
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="nao" name="tarde"> <i></i>Não jogarei</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="lol" name="tarde"> <i></i>League of Legends</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="cs" name="tarde"> <i></i>CS 1.6</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="fifa" name="tarde"> <i></i>FIFA 2016</label>
-                                </div>
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="jd" name="tarde"> <i></i>Just Dance 2016</label>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">                            
+                                <label class="col-md-4 control-label">Jogo Tarde:</label>
+                                <div class="col-md-8">
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="nao" name="tarde"> <i></i>Não jogarei</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="lol" name="tarde"> <i></i>League of Legends</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="cs" name="tarde"> <i></i>CS 1.6</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="fifa" name="tarde"> <i></i>FIFA 2016</label>
+                                    </div>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="jd" name="tarde"> <i></i>Just Dance 2016</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>                                        
