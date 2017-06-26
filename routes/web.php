@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/gerenciar', 'HomeController@index')->name('gerenciar');
+Route::get('/gerenciar', 'HomeController@index')->name('home');
 
 Auth::routes();
 
