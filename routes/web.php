@@ -21,6 +21,8 @@ Route::get('/jogos/lol', 'JogosController@index')->name('lol');
 Route::get('/jogos/just_dance', 'JogosController@index')->name('just_dance');
 Route::get('/jogos/fifa', 'JogosController@index')->name('fifa');
 
+// inscrição
 Route::get('/inscricao', 'InscricaoController@inscricao')->name('inscricao');
+Route::post('/inscricao', 'InscricaoController@adiciona')->name('nova_inscricao_post');
 
 Route::get('/', 'LandingController@index')->name('index');

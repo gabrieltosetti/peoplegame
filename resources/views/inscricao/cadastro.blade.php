@@ -22,50 +22,78 @@
         <div class="row">
             <div class="col-sm-offset-2 col-sm-8">
                 <div class="ibox-content">
-                    <form method="post" class="form-horizontal" action="{{ route('inscricao') }}">
+                    <form method="post" class="form-horizontal" action="{{ route('nova_inscricao_post') }}">
+                        {{ csrf_field() }}
                         <h1 class="font-bold">Inscrição</h1>
                         <p>Tudo certo para participar do evento? Não se esqueça de ler atentamente as regras de cada jogo!</p>
+                        <!--alerta-->
+                        @if(isset($resultado) && $resultado == "cadastrado")
+                        <div class="row"> 
+                            <div class="alert alert-success alert-dismissable">
+                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                Inscrição realizada com sucesso !
+                            </div>
+                        </div>  
+                        @else() 
+                            @if (isset($resultado))
+                                <p> resultado existe </p>
+                            @endif  
+                        @endif
+                        <!--/alerta-->
                         <div class="hr-line-dashed"></div>
                         <p>Informações básicas:</p>
 
                         <!--NOME COMLPETO-->                        
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Nome Completo:</label>
+                        <div class="form-group {{ $errors->has('nome') ? 'has-error' : ''}}">
+                            <label class="col-md-3 control-label" for="nome">Nome Completo:</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control">
+                                <input required type="text" class="form-control" id="nome" name="nome" value="{{ old('nome') }}" >
+                                <span class="help-block"><?php echo $errors->first('nome'); ?></span>
                             </div>
                         </div>                        
                         <!--/NOME COMPLETO-->
                         <!--EMAIL-->                        
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">E-mail:</label>
+                        <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
+                            <label class="col-md-3 control-label" for="email">E-mail:</label>
                             <div class="col-md-9">
-                                <input type="email" class="form-control">
+                                <input required type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                                <span class="help-block"><?php echo $errors->first('email'); ?></span>
                             </div>
                         </div>                        
                         <!--/EMAIL-->
                         <!--IDADE-->                        
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Idade:</label>
+                        <div class="form-group {{ $errors->has('idade') ? 'has-error' : ''}}">
+                            <label class="col-md-3 control-label" for="idade">Idade:</label>
                             <div class="col-md-9">
-                                <input type="number" class="form-control">
+                                <input required type="number" class="form-control" id="idade" name="idade" value="{{ old('idade') }}">
+                                <span class="help-block"><?php echo $errors->first('idade'); ?></span>
                                 <span class="help-block m-b-none">Menores de 18 anos precisam da autorização dos pais.</span>
                             </div>
                             
                         </div>    
                         <div class="alert alert-info col-md-9 col-md-offset-3">
-                                <strong>Atenção:</strong> A autorização precisa ser assinada e impressa para levar no dia ! Clique <a class="alert-link" href="#">Aqui</a> e imprima.
-                            </div>                    
+                            <strong>Atenção:</strong> A autorização precisa ser assinada e impressa para levar no dia ! Clique <a class="alert-link" href="{{ asset('pdf/Autorizacao_dos_pais.pdf') }}" target="_blank">Aqui</a> e imprima.
+                        </div>                    
                         <!--/IDADE-->
+                        <!--CELULAR-->  
+                        <div class="form-group {{ $errors->has('celular') ? 'has-error' : ''}}">
+                            <label class="col-md-3 control-label" for="celular">Celular</label>
+                            <div class="col-md-9">
+                                <input required type="text" class="form-control" data-mask="(99)99999-9999" name="celular" value="{{ old('celular') }}" id="celular">
+                                <span class="help-block"><?php echo $errors->first('celular'); ?></span>
+                                <span class="help-block">Exemplo: (99)99999-9999</span>
+                            </div>
+                        </div>
+                        <!--/CELULAR-->  
                         <!--ALUNO-->                        
                         <div class="form-group">
                             <label class="col-md-3 control-label">Você é aluno?</label>
                             <div class="col-md-9">
                                 <div class="i-checks">
-                                    <label> <input type="radio" checked value="true" name="aluno"> <i></i> Sim </label>
+                                    <label> <input required type="radio" checked value=1 name="aluno" {{ old('aluno') == false ? 'checked' : '' }}> <i></i> Sim </label>
                                 </div>
                                 <div class="i-checks">
-                                    <label> <input type="radio" value="false" name="aluno"> <i></i> Não </label>
+                                    <label> <input required type="radio" value=0 name="aluno" {{ old('aluno') == true ? 'checked' : '' }}> <i></i> Não </label>
                                 </div>
                             </div>
                         </div>                        
@@ -79,57 +107,56 @@
                         </p>
                         <div class="alert alert-warning">
                             <strong>Importante: </strong>Se você escolher participar dos dois períodos, terá de pagar o
-                            valor das duas inscrções!
+                            valor das duas inscrições!
                         </div>
                         <p>Escolha o jogo do <strong>de cada período:</strong></p>
-                        <!--JOGO MANHA-->                                              
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="form-group">                            
-                                <label class="col-md-4 control-label">Jogo Manhã:</label>
-                                <div class="col-md-8">
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="nao" name="manha"> <i></i>Não jogarei</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="lol" name="manha"> <i></i>League of Legends</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="cs" name="manha"> <i></i>CS 1.6</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="fifa" name="manha"> <i></i>FIFA 2016</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="jd" name="manha"> <i></i>Just Dance 2016</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                                         
-                        <!--/JOGO MANHA-->
-                        <!--JOGO TARDE-->                                              
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="form-group">                            
-                                <label class="col-md-4 control-label">Jogo Tarde:</label>
-                                <div class="col-md-8">
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="nao" name="tarde"> <i></i>Não jogarei</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="lol" name="tarde"> <i></i>League of Legends</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="cs" name="tarde"> <i></i>CS 1.6</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="fifa" name="tarde"> <i></i>FIFA 2016</label>
-                                    </div>
-                                    <div class="i-checks">
-                                        <label> <input type="radio" value="jd" name="tarde"> <i></i>Just Dance 2016</label>
+                        <!--JOGO MANHA-->  
+                        <div class="row">                                            
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">                            
+                                    <label class="col-md-4 control-label">Jogo Manhã:</label>
+                                    <div class="col-md-8">
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="nao" name="jogo_manha" {{ old('jogo_manha') == 'nao' ? 'checked' : '' }}> <i></i>Não jogarei</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="lol" name="jogo_manha" {{ old('jogo_manha') == 'lol' ? 'checked' : '' }}> <i></i>League of Legends</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="cs" name="jogo_manha" {{ old('jogo_manha') == 'cs' ? 'checked' : '' }}> <i></i>CS 1.6</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="fifa" name="jogo_manha" {{ old('jogo_manha') == 'fifa' ? 'checked' : '' }}> <i></i>FIFA 2016</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="jd" name="jogo_manha" {{ old('jogo_manha') == 'jd' ? 'checked' : '' }}> <i></i>Just Dance 2016</label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>                                        
-                        <!--/JOGO TARDE-->
+                            </div>                                         
+                            <!--/JOGO MANHA-->
+                            <!--JOGO TARDE-->                                              
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">                            
+                                    <label class="col-md-4 control-label">Jogo Tarde:</label>
+                                    <div class="col-md-8">
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="nao" name="jogo_tarde" {{ old('jogo_tarde') == 'nao' ? 'checked' : '' }}> <i></i>Não jogarei</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="cs" name="jogo_tarde" {{ old('jogo_tarde') == 'cs' ? 'checked' : '' }}> <i></i>CS 1.6</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="fifa" name="jogo_tarde" {{ old('jogo_tarde') == 'fifa' ? 'checked' : '' }}> <i></i>FIFA 2016</label>
+                                        </div>
+                                        <div class="i-checks">
+                                            <label> <input type="radio" value="jd" name="jogo_tarde" {{ old('jogo_tarde') == 'jd' ? 'checked' : '' }}> <i></i>Just Dance 2016</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!--/JOGO TARDE--> 
+                        </div> <!--/ROW-->                                       
                         <button class="btn btn-success" type="submit"><i class="fa fa-check"></i>&nbsp; Finalizar Inscrição!</button>    
                         <a class="btn btn-default pull-right" href="{{ route('index') }}"><i class="fa fa-home"></i>&nbsp; Página Inicial</a>
 
@@ -142,7 +169,7 @@
         <!-- END Main view  -->
 
         <!-- Footer -->
-        <div class="col-md-offset-3 col-md-6">
+        <div class="col-sm-offset-2 col-sm-8">
             <div class="row">
                 <div class="col-xs-6">
                     People Hortolândia
@@ -167,6 +194,8 @@
     <!-- Custom and plugin javascript -->
     <script src="{{ asset('js/inspinia.js') }}"></script>
     <script src="{{ asset('js/plugins/pace/pace.min.js') }}"></script>
+    <!-- Input Mask-->
+    <script src="{{ asset('js/plugins/jasny/jasny-bootstrap.min.js') }}"></script>
 
     <!-- iCheck -->
     <script src="{{ asset('js/plugins/iCheck/icheck.min.js') }}"></script>
@@ -180,57 +209,49 @@
                     alert("entrou");
                     if (this.value == 'nao') {
                         alert("nao");
-                        $("input[type=radio][name=tarde][value=nao]").attr('disabled',true);
+                        $("input[type=radio][name=jogo_tarde][value=nao]").attr('disabled',true);
                         
                     }
 
                 });
 
-                $('input[type=radio][name="manha"]').on('ifChecked', function(event){
+                $('input[type=radio][name="jogo_manha"]').on('ifChecked', function(event){
                     tardeHabilitarTodos();
                     if(this.value == "nao")
                     {
-                        $('input[type=radio][name="tarde"][value="nao"]').iCheck('disable');
-                    }
-                    else if(this.value == "lol")
-                    {
-                        $('input[type=radio][name="tarde"][value="lol"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_tarde"][value="nao"]').iCheck('disable');
                     }
                     else if(this.value == "cs")
                     {
-                        $('input[type=radio][name="tarde"][value="cs"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_tarde"][value="cs"]').iCheck('disable');
                     }
                     else if(this.value == "fifa")
                     {
-                        $('input[type=radio][name="tarde"][value="fifa"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_tarde"][value="fifa"]').iCheck('disable');
                     }
                     else if(this.value == "jd")
                     {
-                        $('input[type=radio][name="tarde"][value="jd"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_tarde"][value="jd"]').iCheck('disable');
                     }
                 });
 
-                $('input[type=radio][name="tarde"]').on('ifChecked', function(event){
+                $('input[type=radio][name="jogo_tarde"]').on('ifChecked', function(event){
                     manhaHabilitarTodos();
                     if(this.value == "nao")
                     {
-                        $('input[type=radio][name="manha"][value="nao"]').iCheck('disable');
-                    }
-                    else if(this.value == "lol")
-                    {
-                        $('input[type=radio][name="manha"][value="lol"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_manha"][value="nao"]').iCheck('disable');
                     }
                     else if(this.value == "cs")
                     {
-                        $('input[type=radio][name="manha"][value="cs"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_manha"][value="cs"]').iCheck('disable');
                     }
                     else if(this.value == "fifa")
                     {
-                        $('input[type=radio][name="manha"][value="fifa"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_manha"][value="fifa"]').iCheck('disable');
                     }
                     else if(this.value == "jd")
                     {
-                        $('input[type=radio][name="manha"][value="jd"]').iCheck('disable');
+                        $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('disable');
                     }
                 });
 
@@ -239,18 +260,16 @@
             });
 
             function tardeHabilitarTodos(){
-                $('input[type=radio][name="tarde"][value="nao"]').iCheck('enable');
-                $('input[type=radio][name="tarde"][value="lol"]').iCheck('enable');
-                $('input[type=radio][name="tarde"][value="cs"]').iCheck('enable');
-                $('input[type=radio][name="tarde"][value="fifa"]').iCheck('enable');
-                $('input[type=radio][name="tarde"][value="jd"]').iCheck('enable');
+                $('input[type=radio][name="jogo_tarde"][value="nao"]').iCheck('enable');
+                $('input[type=radio][name="jogo_tarde"][value="cs"]').iCheck('enable');
+                $('input[type=radio][name="jogo_tarde"][value="fifa"]').iCheck('enable');
+                $('input[type=radio][name="jogo_tarde"][value="jd"]').iCheck('enable');
             }
             function manhaHabilitarTodos(){
-                $('input[type=radio][name="manha"][value="nao"]').iCheck('enable');
-                $('input[type=radio][name="manha"][value="lol"]').iCheck('enable');
-                $('input[type=radio][name="manha"][value="cs"]').iCheck('enable');
-                $('input[type=radio][name="manha"][value="fifa"]').iCheck('enable');
-                $('input[type=radio][name="manha"][value="jd"]').iCheck('enable');
+                $('input[type=radio][name="jogo_manha"][value="nao"]').iCheck('enable');
+                $('input[type=radio][name="jogo_manha"][value="cs"]').iCheck('enable');
+                $('input[type=radio][name="jogo_manha"][value="fifa"]').iCheck('enable');
+                $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('enable');
             }
         </script>
 
