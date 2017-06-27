@@ -43,8 +43,8 @@ class PlayerRequest extends FormRequest
             'required'  => 'O campo :attribute não pode ser vazio.',
             'max'       => 'O campo :attribute não pode passar de :max caracteres.',
             'idade.max'       => 'O valor excede o permitido',
-            'jogo_manha'       => 'Você precisa escolher uma das opções',
-            'jogo_tarde'       => 'Você precisa escolher uma das opções',
+            'jogo_manha.required'       => 'Você precisa escolher uma das opções.',
+            'jogo_tarde.required'       => 'Você precisa escolher uma das opções.',
         ];
     }
 }
