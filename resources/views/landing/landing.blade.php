@@ -37,27 +37,28 @@
 </head>
 <body id="page-top" class="landing-page no-skin-config">
 <div class="navbar-wrapper">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ route('inscricao') }}">INSCREVA-SE!</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="page-scroll" href="#page-top">Home</a></li>
-                        <li><a class="page-scroll" href="#jogos">Jogos</a></li>
-                        <li><a class="page-scroll" href="#cronograma">Cronograma</a></li>
-                        <li><a class="page-scroll" href="#contato">Contato</a></li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ route('inscricao') }}">INSCREVA-SE!</a>
             </div>
-        </nav>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="#page-top">Home</a></li>
+                    <li><a class="page-scroll" href="#informacoes">Informações</a></li>
+                    <li><a class="page-scroll" href="#jogos">Jogos</a></li>
+                    <li><a class="page-scroll" href="#cronograma">Cronograma</a></li>
+                    <li><a class="page-scroll" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>
 
 <!--IMAGEM INICIAL-->
@@ -82,61 +83,179 @@
 <!--/IMAGEM INICIAL-->
 
 
-<!--JOGOS PARTICIPANTES-->
-<section id="jogos" class="container features"> 
+<section class="features" id="informacoes">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1>Informações</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 features-text wow fadeInLeft">
+                <h2>Campeonato</h2>
+                <i class="fa fa-trophy big-icon pull-right"></i>
+                <p>Batalha entre os competidores para subir nas chaves e se consagrar vencedores dos seus jogos no período escolhido (manhã/tarde). 
+                Depois vem o verdadeiro desafio, os 2 vencedores se enfrentarão para ver quem se torna o <strong>campeão do jogo</strong> e ganhar os prêmios ! </p>
+            </div>
+            <div class="col-sm-6 features-text wow fadeInRight">
+                <h2>Times</h2>
+                <i class="fa fa-users big-icon pull-right"></i>
+                <p>Após as inscrições finalizadas, vocês poderão cadastrar seu próprio time para o lol e o cs! 
+                    Junte os amigos e escolha apenas um para entrar e cadastrar todos os outros antes do campeonato. 
+                    Qual nome você dará ao seu time ?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 features-text wow fadeInLeft">
+                <h2>Prêmios </h2>
+                <i class="fa fa-gift big-icon pull-right"></i>
+                <p>Não é campeonato sem prêmios! Os campeões individuais de cada jogo ganharão <strong>jogos de console</strong>.
+                Para os campeões em time, todos receberão o prêmio individualmente dependendo do prêmio do jogo, você pode ver logo abaixo os prêmios !</p>
+            </div>
+            <div class="col-sm-6 features-text wow fadeInRight">
+                <h2>Inscrições</h2>
+                <i class="fa fa-pencil big-icon pull-right"></i>
+                <p>Os jogos possuem vagas limitadas !
+                    Não perca tempo, faça logo sua inscrição aqui no site e garanta sua presença conosco ! 
+                    </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    
+
+<!--JOGOS PARTICIPANTES-->
+<section id="jogos" class="container features">     
     <div class="row">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
             <h1>Jogos participantes</h1>
+            <p>Leiam com atenção cada regra !</p>
         </div>
     </div>
     <!--LEAGUE OF LEGENDS-->
-    <div class="row features-block">
-        <div class="col-xs-12 col-sm-6 wow fadeInLeft">
-            <img src="{{ asset('img/people/lol.jpg') }}" alt="dashboard" class="img-responsive center-block">
+    <div class="row features-block border-bottom">
+        <div class="col-xs-12 col-sm-4 wow fadeInLeft">
+            <img src="{{ asset('img/people/lol.jpg') }}" alt="dashboard" class="img-responsive">
         </div>
-        <div class="col-xs-12 col-sm-6 features-text wow fadeInRight">
+        <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>League of legends </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque sapien at nulla eleifend, sit amet lobortis tellus rhoncus. Praesent rhoncus porta urna at cursus. Suspendisse nec maximus quam, vel tristique sapien. Nam volutpat neque ligula, vitae sodales eros elementum quis. Aliquam erat volutpat. In.</p>
-            <a href="" class="btn btn-primary">Regras !</a>
+            <h3>Regras</h3>
+            <p>Texto 1:</p>
+            <ul class="regras">
+                <li>Regra 1</li>
+                <li>Regra 2</li>
+                <li>Regra 3</li>
+                <li>Regra 4</li>
+                <li>Regra 5</li>
+            </ul>
+            <p>
+                <strong>Obs.:</strong> texto...
+            </p>
+            <br>
+            <h3>Prêmios</h3>
+            <p>Texto 2:</p>
+            <ul class="regras">
+                <li><strong>1º:</strong> <span class="text-info">2800 RP + Brinde + Medalha.</span></li>
+                <li><strong>2º:</strong> <span class="text-info">650 RP + Brinde + Medalha.</span></li>
+                <li><strong>3º:</strong> <span class="text-info">Brinde + Medalha.</span></li>                   
+            </ul>
+            <br>
         </div>        
     </div>
     <!--/LEAGUE OF LEGENDS-->
     <!--CS 1.6-->
-    <div class="row features-block">
-        <div class="col-xs-12 col-sm-6 wow fadeInLeft">
-            <img src="{{ asset('img/people/cs.jpg') }}" alt="dashboard" class="img-responsive center-block">
+    <div class="row features-block border-bottom">
+        <div class="col-xs-12 col-sm-4 wow fadeInLeft">
+            <img src="{{ asset('img/people/cs.jpg') }}" alt="dashboard" class="img-responsive">
         </div>
-        <div class="col-xs-12 col-sm-6 features-text wow fadeInRight">
+        <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>Counter Strike 1.6 </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque sapien at nulla eleifend, sit amet lobortis tellus rhoncus. Praesent rhoncus porta urna at cursus. Suspendisse nec maximus quam, vel tristique sapien. Nam volutpat neque ligula, vitae sodales eros elementum quis. Aliquam erat volutpat. In.</p>
-            <a href="" class="btn btn-primary">Regras !</a>
+            <h3>Regras</h3>
+            <p>Atente-se a cada regra para não ficar perdido depois !</p>
+            <ul class="regras">
+                <li>O cs será disputado em um time de 4 pessoas.</li>
+                <li>Os times serão sorteados para formar as chaves.</li>
+                <li>Os times se enfretarão até sobrar apenas 1 time vencedor.</li>
+                <li>Total de 13 Rounds.</li>
+                <li>Cada Round tem duração máxima de 02 minuto.</li>
+            </ul>
+            <p>
+                <strong>Obs.:</strong> Recomendamos você levar o seu <strong>próprio fone de ouvido</strong> ou mousepad para o campeonato, 
+                pois não será disponibilizado pela escola. Ou até trocar pelo seu próprio mouse.
+            </p>
+            <br>
+            <h3>Prêmios</h3>
+            <p>Lembrando que os prêmios abaixo vão para <strong>cada participante</strong> do time vencedor !</p>
+            <ul class="regras">
+                <li><strong>1º:</strong> <span class="text-info">R$40,00 carteira Steam + Brinde + Medalha.</span></li>
+                <li><strong>2º:</strong> <span class="text-info"> R$10,00 carteira Steam + Brinde + Medalha.</span></li>
+                <li><strong>3º:</strong> <span class="text-info"> Brinde + Medalha.</span></li>                
+            </ul>
+            <br>
         </div>        
     </div>
     <!--/CS 1.6-->
     <!--JUST DANCE-->
-    <div class="row features-block">
-        <div class="col-xs-12 col-sm-6 wow fadeInLeft">
-            <img src="{{ asset('img/people/just_dance.jpg') }}" alt="dashboard" class="img-responsive center-block">
+    <div class="row features-block border-bottom">
+        <div class="col-xs-12 col-sm-4 wow fadeInLeft">
+            <img src="{{ asset('img/people/just_dance.jpg') }}" alt="dashboard" class="img-responsive">
         </div>
-        <div class="col-xs-12 col-sm-6 features-text wow fadeInRight">
+        <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>Just Dance 2016</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque sapien at nulla eleifend, sit amet lobortis tellus rhoncus. Praesent rhoncus porta urna at cursus. Suspendisse nec maximus quam, vel tristique sapien. Nam volutpat neque ligula, vitae sodales eros elementum quis. Aliquam erat volutpat. In.</p>
-            <a href="" class="btn btn-primary">Regras !</a>
+            <h3>Regras</h3>
+            <p>Texto 1:</p>
+            <ul class="regras">
+                <li>Regra 1</li>
+                <li>Regra 2</li>
+                <li>Regra 3</li>
+                <li>Regra 4</li>
+                <li>Regra 5</li>
+            </ul>
+            <p>
+                <strong>Obs.:</strong> texto...
+            </p>
+            <br>
+            <h3>Prêmios</h3>
+            <p>Texto 2:</p>
+            <ul class="regras">
+                <li><strong>1º:</strong> <span class="text-info">Jogo Just Dance 2017 + Brinde + Medalha</span></li>
+                <li><strong>2º:</strong> <span class="text-info">Brinde + Medalha</span></li>
+                <li><strong>3º:</strong> <span class="text-info">Medalha</span></li>                 
+            </ul>
+            <br>
         </div>        
     </div>
     <!--/JUST DANCE-->
     <!--FIFA 2016-->
     <div class="row features-block">
-        <div class="col-xs-12 col-sm-6 wow fadeInLeft">
-            <img src="{{ asset('img/people/fifa.jpg') }}" alt="dashboard" class="img-responsive center-block">
+        <div class="col-xs-12 col-sm-4 wow fadeInLeft">
+            <img src="{{ asset('img/people/fifa.jpg') }}" alt="dashboard" class="img-responsive">
         </div>
-        <div class="col-xs-12 col-sm-6 features-text wow fadeInRight">
+        <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>FIFA 2016 </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque sapien at nulla eleifend, sit amet lobortis tellus rhoncus. Praesent rhoncus porta urna at cursus. Suspendisse nec maximus quam, vel tristique sapien. Nam volutpat neque ligula, vitae sodales eros elementum quis. Aliquam erat volutpat. In.</p>
-            <a href="" class="btn btn-primary">Regras !</a>
+            <h3>Regras</h3>
+            <p>Texto 1:</p>
+            <ul class="regras">
+                <li>Regra 1</li>
+                <li>Regra 2</li>
+                <li>Regra 3</li>
+                <li>Regra 4</li>
+                <li>Regra 5</li>
+            </ul>
+            <p>
+                <strong>Obs.:</strong> texto...
+            </p>
+            <br>
+            <h3>Prêmios</h3>
+            <p>Texto 2:</p>
+            <ul class="regras">
+                <li><strong>1º:</strong> <span class="text-info">Jogo FIFA 2017 + Brinde + Medalha</span></li>
+                <li><strong>2º:</strong> <span class="text-info">Brinde + Medalha</span></li>
+                <li><strong>3º:</strong> <span class="text-info">Medalha</span></li>                
+            </ul>
+            <br>
         </div>        
     </div>
     <!--/FIFA 2016-->

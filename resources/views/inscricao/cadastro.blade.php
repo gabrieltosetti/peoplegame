@@ -161,8 +161,6 @@
                         <a class="btn btn-default pull-right" href="{{ route('index') }}"><i class="fa fa-home"></i>&nbsp; Página Inicial</a>
 
                     </form>
-                    
-                    
                 </div><!--/IBOX CONTENT-->
             </div><!--/COL-->
         </div><!--/ROW-->
