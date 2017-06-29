@@ -38,10 +38,8 @@
                         {{ csrf_field() }}
                         <h1 class="font-bold">Inscrição</h1>
                         <p>Tudo certo para participar do evento? Não se esqueça de ler atentamente as regras de cada jogo!</p>
-                        <!--alerta-->
-                        @if(isset($resultado) && $resultado == "cadastrado")
-                            <script>sweetAlert("Parabéns !", "Sua inscrição foi realizada com sucesso", "success")</script> 
-                        @endif
+                        
+                        <!--alerta-->                        
                         @if($errors->any())
                         <div class="row"> 
                             <div class="alert alert-danger alert-dismissable">
@@ -49,7 +47,6 @@
                                 Porfavor, corrija o(s) erro(s) abaixo !
                             </div>
                         </div>
-
                         @endif
                         <!--/alerta-->
                         <div class="hr-line-dashed"></div>
@@ -271,6 +268,11 @@
                     }
                 });
 
+                /*alerta de sucesso*/
+                @if(isset($resultado) && $resultado == "cadastrado")
+                    sweetAlert("Parabéns !", "Sua inscrição foi realizada com sucesso", "success");
+                @endif
+                /*/alerta de sucesso*/
 
             });
 
@@ -325,34 +327,6 @@
                 {
                     $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('disable');
                 }
-            }
-
-            function inscrito() {
-
-                sweetAlert("Parabéns !", "Sua inscrição foi realizada com sucesso", "success");
-
-
-
-
-                /*swal({
-                    title: "Are you sure?",
-                    text: "Your will not be able to recover this imaginary file!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false },
-
-                    function (isConfirm) {
-                        if (isConfirm) {
-                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                        } else {
-                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-                        }
-                    }
-                );*/
             }
 
         </script>

@@ -26,13 +26,13 @@
 
     
 
-<!--    <style>
+    <style>
         @media (max-width: 767px) {
-            .jogoimg {
-                
+            .espaco {
+                margin-bottom: 30px;
             }
         }
-    </style>-->
+    </style>
 
 </head>
 <body id="page-top" class="landing-page no-skin-config">
@@ -54,6 +54,7 @@
                     <li><a class="page-scroll" href="#informacoes">Informações</a></li>
                     <li><a class="page-scroll" href="#jogos">Jogos</a></li>
                     <li><a class="page-scroll" href="#cronograma">Cronograma</a></li>
+                    <li><a class="page-scroll" href="#patrocinio">Patrocínio</a></li>
                     <li><a class="page-scroll" href="#contato">Contato</a></li>
                 </ul>
             </div>
@@ -391,7 +392,35 @@
 
 </section>
 
-<section id="contato" class="contact">
+<section  id="patrocinio" class="container features">
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="navy-line"></div>
+            <h1>Patrocínio</h1>
+        </div>
+    </div>
+    <div class="row features-block">
+        <div class="col-sm-6 col-sm-push-6 text-right wow fadeInRight">
+            <img src="{{ asset('img/people/upgames.jpg') }}" alt="Up games" class="img-responsive pull-right espaco">
+        </div>
+        <div class="col-sm-6 col-sm-pull-6 wow fadeInLeft">
+            <small>Jogos, informática, consertos</small>
+            <h2>Up Games </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero orci, efficitur eget venenatis id, lobortis vel 
+                orci. Fusce ut blandit leo, non tristique enim. Vivamus aliquam maximus massa, at pellentesque 
+                ex sagittis sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna purus, dignissim ut neque non, sodales.
+            </p>
+            <a class="btn btn-success btn-facebook" href="https://www.facebook.com/upgamesinformatica/" target="_blank">
+                <i class="fa fa-facebook"> </i> Curta nossa página
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section id="contato" class="contact gray-section">
     <div class="container">
         <div class="row m-b-lg">
             <div class="col-lg-12 text-center">
