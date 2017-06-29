@@ -11,6 +11,8 @@
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/plugins/iCheck/square/blue.css') }}" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <style>
@@ -18,9 +20,14 @@
             color: #ed5565;
         }
     </style>
+    
+    <!-- Sweet alert -->
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    
 
 </head>
 <body class="gray-bg">
+        
 
     <div class="wrapper wrapper-content animated fadeInDown">
         <!-- Main view  -->
@@ -33,16 +40,16 @@
                         <p>Tudo certo para participar do evento? Não se esqueça de ler atentamente as regras de cada jogo!</p>
                         <!--alerta-->
                         @if(isset($resultado) && $resultado == "cadastrado")
+                            <script>sweetAlert("Parabéns !", "Sua inscrição foi realizada com sucesso", "success")</script> 
+                        @endif
+                        @if($errors->any())
                         <div class="row"> 
-                            <div class="alert alert-success alert-dismissable">
+                            <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                Inscrição realizada com sucesso !
+                                Porfavor, corrija o(s) erro(s) abaixo !
                             </div>
-                        </div>  
-                        @else() 
-                            @if (isset($resultado))
-                                <p> resultado existe </p>
-                            @endif  
+                        </div>
+
                         @endif
                         <!--/alerta-->
                         <div class="hr-line-dashed"></div>
@@ -77,7 +84,7 @@
                             
                         </div>    
                         <div class="alert alert-info col-md-9 col-md-offset-3">
-                            <strong>Atenção:</strong> A autorização precisa ser assinada e impressa para levar no dia ! Clique <a class="alert-link" href="{{ asset('pdf/Autorizacao_dos_pais.pdf') }}" target="_blank">Aqui</a> e imprima.
+                            <strong>Atenção:</strong> A autorização precisa ser assinada e impressa para levar <strong>junto com o RG</strong> no dia ! Clique <a class="alert-link" href="{{ asset('pdf/Autorizacao_dos_pais.pdf') }}" target="_blank">Aqui</a> e imprima.
                         </div>                    
                         <!--/IDADE-->
                         <!--CELULAR-->  
@@ -180,7 +187,7 @@
                     People Hortolândia
                 </div>
                 <div class="col-xs-6 text-right">
-                    <small>Desenvolvido por <a href="https://br.linkedin.com/in/gabriel-silva-tosetti-b56013103">Gabriel Tosetti</a></small>
+                    <small>Desenvolvido por <a href="https://br.linkedin.com/in/gabriel-silva-tosetti-b56013103">Gabriel Silva Tosetti</a></small>
                 </div>
             </div>
         </div>
@@ -191,6 +198,7 @@
 
 
     <!-- Mainly scripts -->
+    
     <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
@@ -201,6 +209,7 @@
     <script src="{{ asset('js/plugins/pace/pace.min.js') }}"></script>
     <!-- Input Mask-->
     <script src="{{ asset('js/plugins/jasny/jasny-bootstrap.min.js') }}"></script>
+
 
     <!-- iCheck -->
     <script src="{{ asset('js/plugins/iCheck/icheck.min.js') }}"></script>
@@ -262,7 +271,6 @@
                     }
                 });
 
-                
 
             });
 
@@ -318,6 +326,35 @@
                     $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('disable');
                 }
             }
+
+            function inscrito() {
+
+                sweetAlert("Parabéns !", "Sua inscrição foi realizada com sucesso", "success");
+
+
+
+
+                /*swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false },
+
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    }
+                );*/
+            }
+
         </script>
 
 

@@ -25,7 +25,7 @@ class PlayerRequest extends FormRequest
     {
         return [
             'nome' => 'required|max:120',
-            'email' => 'required|max:100',
+            'email' => 'required|max:100|unique:players,email', 
             'idade' => 'required|max:2',
             'celular' => 'required|max:14',
             'aluno' => 'required',
@@ -45,6 +45,7 @@ class PlayerRequest extends FormRequest
             'idade.max'       => 'O valor excede o permitido',
             'jogo_manha.required'       => 'Você precisa escolher uma das opções.',
             'jogo_tarde.required'       => 'Você precisa escolher uma das opções.',
+            'email.unique'       => 'Este e-mail já está sendo usado.',
         ];
     }
 }

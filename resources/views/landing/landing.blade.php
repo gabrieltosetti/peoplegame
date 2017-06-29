@@ -142,20 +142,32 @@
         <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>League of legends </h2>
             <h3>Regras</h3>
-            <p>Texto 1:</p>
+            <p>
+                É importante que a equipe se organize e se atente aos horários em que irão ocorrer suas partidas, caso haja atraso, será desclassificada.<br><br>
+
+                Em caso de ausência de algum membro da equipe, a mesma deverá jogar com um membro a menos, portanto é recomendado que se tenha um jogador reserva. 
+                Do contrário será automaticamente desclassificada da competição e NÃO TERÁ A TAXA DE INSCRIÇÃO DE VOLTA.<br><br>
+
+                Se houver algum imprevisto (substituição de última hora, membro da equipe passou mal, etc.), 
+                entre em contato com a escola, antecipadamente, para nos informar.<br><br>
+
+                Esteja ciente da sua disponibilidade de tempo, pois o campeonato será das 8h às 21h, 
+                sendo a grande final disputada entre os horários das 19h e 21h em uma MELHOR DE 3 (MD3)
+            </p>
             <ul class="regras">
-                <li>Regra 1</li>
-                <li>Regra 2</li>
-                <li>Regra 3</li>
-                <li>Regra 4</li>
-                <li>Regra 5</li>
+                <li><strong>Duração de cada partida:</strong> 40 min (no máximo).</li>
+                <li><strong>Time:</strong> 5 pessoas.</li>
+                <li><strong>Inscrição:</strong> R$15,00 por pessoa.</li>
+                <li>Não pode xingar (evitar gritaria).</li>
             </ul>
             <p>
-                <strong>Obs.:</strong> texto...
+                <strong>Obs.:</strong> Recomendamos você levar o seu <strong>próprio fone de ouvido</strong> ou mousepad para o campeonato, 
+                pois não será disponibilizado pela escola. Ou até trocar pelo seu próprio mouse.
             </p>
             <br>
             <h3>Prêmios</h3>
-            <p>Texto 2:</p>
+            <p>Todo valor arrecadado pelas inscrições serão voltados para as premiações. 
+                Lembrando que os prêmios abaixo vão para <strong>cada participante</strong> do time vencedor !</p>
             <ul class="regras">
                 <li><strong>1º:</strong> <span class="text-info">2800 RP + Brinde + Medalha.</span></li>
                 <li><strong>2º:</strong> <span class="text-info">650 RP + Brinde + Medalha.</span></li>
@@ -173,13 +185,25 @@
         <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>Counter Strike 1.6 </h2>
             <h3>Regras</h3>
-            <p>Atente-se a cada regra para não ficar perdido depois !</p>
+            <p>
+                O CS será disputado em times 4 contra 4. Depois de definidos todos os times, faremos chaves sorteadas até que
+                sobre apenas o vencedor. Teremos 2 períodos de jogos e também 2 times campeões, o de manhã e o de tarde.
+                Os 2 times campeões irão se enfrentar à noite para decidir quem irá ganhar os prêmios finais abaixo !            
+            </p>
             <ul class="regras">
-                <li>O cs será disputado em um time de 4 pessoas.</li>
-                <li>Os times serão sorteados para formar as chaves.</li>
-                <li>Os times se enfretarão até sobrar apenas 1 time vencedor.</li>
-                <li>Total de 13 Rounds.</li>
-                <li>Cada Round tem duração máxima de 02 minuto.</li>
+                <li><strong>Time:</strong> 4 pessoas.</li>
+                <li><strong>Rounds:</strong> 13 Rounds.</li>
+                <li><strong>Duração:</strong> 2 minutos.</li>
+                <li><strong>Inscrição:</strong> R$10,00 por pessoa.</li>
+                <li><strong>Classificação:</strong></li>
+                <ul>
+                    <li><strong>1º Colocado:</strong> Vencedor entre o 1º da manhã e 1º da tarde.</li>
+                    <li><strong>2º Colocado:</strong> Perdedor entre o 1º da manhã e 1º da tarde.</li>
+                    <li><strong>3º Colocado:</strong> Vencedor entre o 2º da manhã e 2º da tarde.</li>
+                </ul>
+                <ul class="unstyled">
+                    <li><small><span class="text-warning">Jogos da classificação aconteceram à noite</span></small></li>
+                </ul>
             </ul>
             <p>
                 <strong>Obs.:</strong> Recomendamos você levar o seu <strong>próprio fone de ouvido</strong> ou mousepad para o campeonato, 
@@ -236,20 +260,15 @@
         <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>FIFA 2016 </h2>
             <h3>Regras</h3>
-            <p>Texto 1:</p>
+            <p>O campeonato será disputado como fase de grupos, de um contra um. Será permitido escolher times iguais no mesmo torneio. 
+                Partidas do torneio são jogadas através das seguintes configurações para criação de Sala:</p>
             <ul class="regras">
-                <li>Regra 1</li>
-                <li>Regra 2</li>
-                <li>Regra 3</li>
-                <li>Regra 4</li>
-                <li>Regra 5</li>
+                <li><strong>Tempo:</strong> 6 Minutos.</li>
+                <li><strong>Controles:</strong> Xbox One.</li>
+                <li><strong>Velocidade:</strong> Normal.</li>
             </ul>
-            <p>
-                <strong>Obs.:</strong> texto...
-            </p>
             <br>
             <h3>Prêmios</h3>
-            <p>Texto 2:</p>
             <ul class="regras">
                 <li><strong>1º:</strong> <span class="text-info">Jogo FIFA 2017 + Brinde + Medalha</span></li>
                 <li><strong>2º:</strong> <span class="text-info">Brinde + Medalha</span></li>
@@ -382,7 +401,7 @@
             </div>
         </div>
         <div class="row m-b-lg">
-            <div class="col-lg-3 col-lg-offset-3">
+            <div class="col-sm-4 col-sm-offset-2">
                 <address>
                     <strong><span class="navy">People Hortolândia</span></strong><br/>
                     Rua João Camilo de Camargo, nº 110<br/>
@@ -392,9 +411,7 @@
                     
                 </address>
             </div>
-            <div class="col-lg-4">
-                <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLlwQYPnwr5NS_6lY7VAGOJzZ1cjiGKLs"></script>-->
-                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLlwQYPnwr5NS_6lY7VAGOJzZ1cjiGKLs&callback=initMap" type="text/javascript"></script>
+            <div class="col-sm-4">
                 <p class="text-color">
                     Pode nos encontrar também no <a href="https://www.google.com.br/maps/place/PEOPLE+FORMA%C3%87%C3%83O+COMPLETA+-+REMANSO+-/@-22.8651495,-47.2155772,15z/data=!4m5!3m4!1s0x0:0xb60a93d7aa16e940!8m2!3d-22.8651495!4d-47.2155772">Google Maps</a>
                 </p>
@@ -406,9 +423,6 @@
                     Ou nos siga em nossas redes sociais
                 </p>
                 <ul class="list-inline social-icon">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    
                     <li><a href="https://www.facebook.com/Peoplehorto/"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li><a href="https://www.instagram.com/peoplehortolandia/"><i class="fa fa-instagram"></i></a>
