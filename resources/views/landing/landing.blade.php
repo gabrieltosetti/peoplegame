@@ -153,7 +153,7 @@
                 entre em contato com a escola, antecipadamente, para nos informar.<br><br>
 
                 Esteja ciente da sua disponibilidade de tempo, pois o campeonato será das 8h às 21h, 
-                sendo a grande final disputada entre os horários das 19h e 21h em uma MELHOR DE 3 (MD3)
+                sendo a grande final disputada entre os horários das 19h e 21h em uma MELHOR DE 3 (MD3).
             </p>
             <ul class="regras">
                 <li><strong>Duração de cada partida:</strong> 40 min (no máximo).</li>
@@ -170,9 +170,9 @@
             <p>Todo valor arrecadado pelas inscrições serão voltados para as premiações. 
                 Lembrando que os prêmios abaixo vão para <strong>cada participante</strong> do time vencedor !</p>
             <ul class="regras">
-                <li><strong>1º:</strong> <span class="text-info">2800 RP + Brinde + Medalha.</span></li>
-                <li><strong>2º:</strong> <span class="text-info">650 RP + Brinde + Medalha.</span></li>
-                <li><strong>3º:</strong> <span class="text-info">Brinde + Medalha.</span></li>                   
+                <li><strong>1º:</strong> <span class="text-info">6110 RP + Brinde + Medalha.</span></li>
+                <li><strong>2º:</strong> <span class="text-info">2980 RP + Brinde + Medalha.</span></li>
+                <li><strong>3º:</strong> <span class="text-info">1465 RP + Brinde + Medalha.</span></li>                   
             </ul>
             <br>
         </div>        
@@ -230,23 +230,30 @@
         <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
             <h2>Just Dance 2016</h2>
             <h3>Regras</h3>
-            <p>Texto 1:</p>
-            <ul class="regras">
-                <li>Regra 1</li>
-                <li>Regra 2</li>
-                <li>Regra 3</li>
-                <li>Regra 4</li>
-                <li>Regra 5</li>
-            </ul>
             <p>
-                <strong>Obs.:</strong> texto...
+                O campeonato será em modalidade individual.<br>
+                O participante que não estiver presente no momento da partida será automaticamente desclassificado.<br><br>
+
+                <h3>Sistema de Jogo</h3>
+                As disputas serão entre 2 competidores, com música escolhida aleatoriamente 
+                dentre as músicas disponíveis no Just Dance 2016.<br><br>
+
+                <strong>Classificação:</strong> Eliminação única (o jogador ao perder uma partida será eliminado da competição, 
+                ou seja, não há repescagem).<br><br>
+                A pontuação de desempenho dos participantes é feita eletronicamente pelo sistema do Just Dance 2016 (do Xbox One). <br><br>
+
+                Não há qualquer juízo de valor ou pontuação dada por espectadores ou por integrantes da organização.<br><br>
+
+                Será considerado o campeão da rodada o jogador que fizer a maior pontuação.
             </p>
+            <ul class="regras">
+                <li><strong>Inscrição:</strong> R$10,00 por pessoa.</li>
+            </ul>
             <br>
             <h3>Prêmios</h3>
-            <p>Texto 2:</p>
             <ul class="regras">
-                <li><strong>1º:</strong> <span class="text-info">Jogo Just Dance 2017 + Brinde + Medalha</span></li>
-                <li><strong>2º:</strong> <span class="text-info">Brinde + Medalha</span></li>
+                <li><strong>1º:</strong> <span class="text-info">Vale 1 Jogo de console (UpGames) + Medalha</span></li>
+                <li><strong>2º:</strong> <span class="text-info">Vale R$50,00 (UpGames) + Medalha</span></li>
                 <li><strong>3º:</strong> <span class="text-info">Medalha</span></li>                 
             </ul>
             <br>
@@ -267,13 +274,14 @@
                 <li><strong>Tempo:</strong> 6 Minutos.</li>
                 <li><strong>Controles:</strong> Xbox One.</li>
                 <li><strong>Velocidade:</strong> Normal.</li>
+                <li><strong>Inscrição:</strong> R$10,00 por pessoa.</li>
             </ul>
             <br>
             <h3>Prêmios</h3>
             <ul class="regras">
-                <li><strong>1º:</strong> <span class="text-info">Jogo FIFA 2017 + Brinde + Medalha</span></li>
-                <li><strong>2º:</strong> <span class="text-info">Brinde + Medalha</span></li>
-                <li><strong>3º:</strong> <span class="text-info">Medalha</span></li>                
+                <li><strong>1º:</strong> <span class="text-info">Vale 1 Jogo de console (UpGames) + Medalha</span></li>
+                <li><strong>2º:</strong> <span class="text-info">Vale R$50,00 (UpGames) + Medalha</span></li>
+                <li><strong>3º:</strong> <span class="text-info">Medalha</span></li>                       
             </ul>
             <br>
         </div>        

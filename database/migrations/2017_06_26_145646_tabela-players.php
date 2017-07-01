@@ -20,6 +20,7 @@ class TabelaPlayers extends Migration
             $table->smallInteger('idade');
             $table->char('celular', 14); //(19)99999-9999
             $table->boolean('aluno');            
+            $table->boolean('pagamento')->default(false);            
             $table->char('jogo_manha', 20);
             $table->char('jogo_tarde', 20);
 
