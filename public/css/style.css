@@ -179,7 +179,7 @@ ul.nav-second-level {
   background: #293846;
 }
 .nav > li.active {
-  border-left: 4px solid #19aa8d;
+  border-left: 4px solid #ed5565;
   background: #293846;
 }
 .nav.nav-second-level > li.active {
@@ -664,8 +664,8 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn-primary:active:hover,
 .btn-primary.active:hover,
 .btn-primary.active:focus {
-  background-color: #18a689;
-  border-color: #18a689;
+  background-color: #d63243;
+  border-color: #d63243;
   color: #FFFFFF;
 }
 .btn-primary:active,
