@@ -388,7 +388,7 @@
                         var data_aluno, data_pagamento; 
                         switch(data.aluno)
                         {
-                            case 0:
+                            case "0":
                                 data_aluno = "Nao";
                                 break;
                             default:
@@ -398,7 +398,7 @@
 
                         switch(data.pagamento)
                         {
-                            case 0:
+                            case "0":
                                 data_pagamento = "Nao";
                                 break;
                             default:
