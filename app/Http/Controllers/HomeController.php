@@ -39,4 +39,21 @@ class HomeController extends Controller
         
         return view('home/index', ["jogos" => $jogos, "inscritos" => $inscritos]);
     }
+
+    public function editar(Request $request, $inscrito_id)
+    {
+        $inscrito = Player::find($inscrito_id);
+
+        $inscrito->nome = $request->input('nome');
+        // $inscrito->email = $request->email;
+        // $inscrito->idade = $request->idade;
+        // $inscrito->celular = $request->celular;
+        // $inscrito->aluno = $request->aluno;
+        // $inscrito->jogo_manha = $request->jogo_manha;
+        // $inscrito->jogo_tarde = $request->jogo_tarde;
+
+        $inscrito->save();
+
+        return Response::json($inscrito);
+    }
 }
