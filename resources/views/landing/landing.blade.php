@@ -415,11 +415,11 @@
         <div class="col-sm-6 col-sm-pull-6 wow fadeInLeft">
             <small>Jogos, informática, consertos</small>
             <h2>Up Games </h2>
-            <p>
+        <!--    <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero orci, efficitur eget venenatis id, lobortis vel 
                 orci. Fusce ut blandit leo, non tristique enim. Vivamus aliquam maximus massa, at pellentesque 
                 ex sagittis sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna purus, dignissim ut neque non, sodales.
-            </p>
+            </p>-->
             <a class="btn btn-success btn-facebook" href="https://www.facebook.com/upgamesinformatica/" target="_blank">
                 <i class="fa fa-facebook"> </i> Curta nossa página
             </a>

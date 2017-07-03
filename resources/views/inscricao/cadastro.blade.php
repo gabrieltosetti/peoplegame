@@ -130,16 +130,40 @@
                                             <label class="ichecks-control"> <input type="radio" value="nao" name="jogo_manha" {{ old('jogo_manha') == 'nao' ? 'checked' : '' }}> <i></i>Não jogarei</label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="lol" name="jogo_manha" {{ old('jogo_manha') == 'lol' ? 'checked' : '' }}> <i></i>League of Legends</label>
+                                            <label class="ichecks-control"> <input type="radio" value="lol" name="jogo_manha" {{ old('jogo_manha') == 'lol' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["lol_manha"])
+                                                <strike>League of Legends</strike>
+                                            @else
+                                                League of Legends
+                                            @endif
+                                            </label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="cs" name="jogo_manha" {{ old('jogo_manha') == 'cs' ? 'checked' : '' }}> <i></i>CS 1.6</label>
+                                            <label class="ichecks-control"> <input type="radio" value="cs" name="jogo_manha" {{ old('jogo_manha') == 'cs' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["cs_manha"])
+                                                <strike>Counter Strike 1.6</strike>
+                                            @else
+                                                Counter Strike 1.6
+                                            @endif
+                                            </label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="fifa" name="jogo_manha" {{ old('jogo_manha') == 'fifa' ? 'checked' : '' }}> <i></i>FIFA 2016</label>
+                                            <label class="ichecks-control"> <input type="radio" value="fifa" name="jogo_manha" {{ old('jogo_manha') == 'fifa' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["fifa_manha"])
+                                                <strike>FIFA 2016</strike>
+                                            @else
+                                                FIFA 2016
+                                            @endif
+                                            </label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="jd" name="jogo_manha" {{ old('jogo_manha') == 'jd' ? 'checked' : '' }}> <i></i>Just Dance 2016</label>
+                                            <label class="ichecks-control"> <input type="radio" value="jd" name="jogo_manha" {{ old('jogo_manha') == 'jd' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["jd_manha"])
+                                                <strike>Just Dance 2016</strike>
+                                            @else
+                                                Just Dance 2016
+                                            @endif
+                                            </label>
                                         </div>
                                         <span class="help-block"><?php echo $errors->first('jogo_manha'); ?></span>
                                     </div>
@@ -155,13 +179,31 @@
                                             <label class="ichecks-control"> <input type="radio" value="nao" name="jogo_tarde" {{ old('jogo_tarde') == 'nao' ? 'checked' : '' }}> <i></i>Não jogarei</label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="cs" name="jogo_tarde" {{ old('jogo_tarde') == 'cs' ? 'checked' : '' }}> <i></i>CS 1.6</label>
+                                            <label class="ichecks-control"> <input type="radio" value="cs" name="jogo_tarde" {{ old('jogo_tarde') == 'cs' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["cs_tarde"])
+                                                <strike>Counter Strike 1.6</strike>
+                                            @else
+                                                Counter Strike 1.6
+                                            @endif
+                                            </label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="fifa" name="jogo_tarde" {{ old('jogo_tarde') == 'fifa' ? 'checked' : '' }}> <i></i>FIFA 2016</label>
+                                            <label class="ichecks-control"> <input type="radio" value="fifa" name="jogo_tarde" {{ old('jogo_tarde') == 'fifa' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["fifa_tarde"])
+                                                <strike>FIFA 2016</strike>
+                                            @else
+                                                FIFA 2016
+                                            @endif
+                                            </label>
                                         </div>
                                         <div class="i-checks">
-                                            <label class="ichecks-control"> <input type="radio" value="jd" name="jogo_tarde" {{ old('jogo_tarde') == 'jd' ? 'checked' : '' }}> <i></i>Just Dance 2016</label>
+                                            <label class="ichecks-control"> <input type="radio" value="jd" name="jogo_tarde" {{ old('jogo_tarde') == 'jd' ? 'checked' : '' }}> <i></i>
+                                            @if($jogos["jd_tarde"])
+                                                <strike>Just Dance 2016</strike>
+                                            @else
+                                                Just Dance 2016
+                                            @endif
+                                            </label>
                                         </div>
                                         <span class="help-block"><?php echo $errors->first('jogo_tarde'); ?></span>
                                     </div>
