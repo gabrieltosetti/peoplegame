@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Player;
+use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
 {
@@ -45,15 +46,16 @@ class HomeController extends Controller
         $inscrito = Player::find($inscrito_id);
 
         $inscrito->nome = $request->input('nome');
-        // $inscrito->email = $request->email;
-        // $inscrito->idade = $request->idade;
-        // $inscrito->celular = $request->celular;
-        // $inscrito->aluno = $request->aluno;
-        // $inscrito->jogo_manha = $request->jogo_manha;
-        // $inscrito->jogo_tarde = $request->jogo_tarde;
+        $inscrito->email = $request->input('email');
+        $inscrito->idade = $request->input('idade');
+        $inscrito->celular = $request->input('celular');
+        $inscrito->aluno = $request->input('aluno');
+        /*$inscrito->pagamento = $request->input('pagamento');*/
+        $inscrito->jogo_manha = $request->input('jogo_manha');
+        $inscrito->jogo_tarde = $request->input('jogo_tarde');
 
         $inscrito->save();
-
+        
         return Response::json($inscrito);
     }
 }

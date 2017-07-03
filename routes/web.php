@@ -2,6 +2,7 @@
 use App\Player;
 use Illuminate\Http\Request;
 use App\Http\Requests\PlayerRequest;
+use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,21 +31,18 @@ Route::post('/inscricao', 'InscricaoController@adiciona')->name('nova_inscricao_
 
 Route::get('/', 'LandingController@index')->name('index');
 
+// AJAX
+
 Route::get('/inscrito/{inscrito_id?}',function($inscrito_id){
     $inscrito = Player::find($inscrito_id);
 
     return Response::json($inscrito);
 });
 
-//Route::put('/inscrito/{inscrito_id?}', 'HomeController@editar');
+Route::post('/inscrito/{inscrito_id?}', 'HomeController@editar');
 
-Route::post('/inscrito/{inscrito_id?}',function(PlayerRequest $request,$inscrito_id){
-    $inscrito = Player::find($inscrito_id);
+Route::delete('/inscrito/{inscrito_id?}',function($inscrito_id){
+    $inscrito = Player::destroy($inscrito_id);
 
-/*    $inscrito->inscrito = $request->input('nome');
-    $inscrito->email = $request->input('email');
-
-    $inscrito->save();*/
-    
     return Response::json($inscrito);
 });

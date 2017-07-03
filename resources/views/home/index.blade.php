@@ -7,7 +7,7 @@
 
 @section('css')
       <link href="{{ asset('css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
-      <meta name="csrf-token" content="{{ csrf_token() }}" />
+      <meta name="_token" content="{{ csrf_token() }}" />
 @stop
 
 @section('content')
@@ -131,9 +131,9 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="lista_inscrito" name="lista_inscrito">
                                     @foreach ($inscritos as $inscrito)                                    
-                                        <tr id=inscrito"{{ $inscrito->id }}">                                            
+                                        <tr id="inscrito{{ $inscrito->id }}">                                            
                                             <td>{{$inscrito->id}}</td>
                                             <td>{{$inscrito->nome}}</td>
                                             <td>{{$inscrito->email}}</td>
@@ -145,7 +145,7 @@
                                             <td>{{$inscrito->pagamento == 0 ? "Nao" : "Sim"}}</td>
                                             <td>
                                                 <button class="btn btn-warning btn-xs btn-detail open-modal" value="{{$inscrito->id}}">Editar</button>
-                                                <button class="btn btn-danger btn-xs btn-delete delete-task" value="{{$inscrito->id}}">Deletar</button>
+                                                <button class="btn btn-danger btn-xs btn-delete deletar_inscrito" value="{{$inscrito->id}}">Deletar</button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -254,7 +254,7 @@
             var url = "/inscrito";
 
             //display modal form for task editing
-            $('.open-modal').click(function(){
+            $('#lista_inscrito').on("click", ".open-modal", function () {
                 var inscrito_id = $(this).val();
 
                 $.get(url + '/' + inscrito_id, function (data) {
@@ -272,6 +272,29 @@
 
                     $('#myModal').modal('show');
                 }) 
+            });
+
+            //deletar click
+            $('#lista_inscrito').on("click", ".deletar_inscrito", function () {
+                var inscrito_id = $(this).val();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type: "DELETE",
+                    url: url + '/' + inscrito_id,
+                    success: function (data) {
+                        console.log(data);
+
+                        $("#inscrito" + inscrito_id).remove();
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
             });
 
             //create new inscrito / update existing inscrito
@@ -302,14 +325,9 @@
                 var my_url = url;
 
                 if (state == "update"){
-                    console.log("state é update");
-                    type = "POST"; //for updating existing resource
+                    type = "post"; //for updating existing resource
                     my_url += '/' + inscrito_id;
                 }
-
-                console.log(formData);
-                console.log(type);
-                console.log(my_url);
 
                 $.ajax({
                     type: type,
@@ -317,10 +335,10 @@
                     data: formData,
                     dataType: 'json',
                     success: function (data) {
-                        console.log(data);
+                        //console.log(data);
 
                         var inscrito = '<tr id="inscrito' + data.id + '"><td>' + data.id + '</td><td>' + data.nome + '</td><td>' + data.email + '</td><td>' + data.idade + '</td><td>' + data.celular + '</td><td>' + data.jogo_manha + '</td><td>' + data.jogo_tarde + '</td><td>' + data.aluno + '</td><td>' + data.pagamento + '</td>';
-                        inscrito += '<td><button class="btn btn-warning btn-xs btn-detail open-modal" value="' + data.id + '">Editar</button>';
+                        inscrito += '<td><button class="btn btn-warning btn-xs btn-detail open-modal" value=' + data.id + '>Editar</button>';
                         inscrito += '<button class="btn btn-danger btn-xs btn-delete delete-task" value="' + data.id + '">Deletar</button></td></tr>';
 
                         //user updated an existing record
@@ -334,6 +352,8 @@
                         console.log('Error:', data);
                     }
                 });
+
+                
             });
 
         });
