@@ -33,16 +33,6 @@ Route::get('/', 'LandingController@index')->name('index');
 
 // AJAX
 
-Route::get('/inscrito/{inscrito_id?}',function($inscrito_id){
-    $inscrito = Player::find($inscrito_id);
-
-    return Response::json($inscrito);
-});
-
+Route::get('/inscrito/{inscrito_id?}', 'HomeController@info');
 Route::post('/inscrito/{inscrito_id?}', 'HomeController@editar');
-
-Route::delete('/inscrito/{inscrito_id?}',function($inscrito_id){
-    $inscrito = Player::destroy($inscrito_id);
-
-    return Response::json($inscrito);
-});
+Route::delete('/inscrito/{inscrito_id?}', 'HomeController@deletar');

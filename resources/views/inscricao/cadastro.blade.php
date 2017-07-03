@@ -12,7 +12,8 @@
 
     <link href="{{ asset('css/plugins/iCheck/square/blue.css') }}" rel="stylesheet">
     <!-- Sweet Alert -->
-    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="css/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <script src="js/plugins/sweetalert2/sweetalert2.min.js"></script>
     
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <style>
@@ -22,7 +23,7 @@
     </style>
     
     <!-- Sweet alert -->
-    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    
     
 
 </head>

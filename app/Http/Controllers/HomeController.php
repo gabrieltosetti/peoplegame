@@ -58,4 +58,18 @@ class HomeController extends Controller
         
         return Response::json($inscrito);
     }
+
+    public function info($inscrito_id)
+    {
+        $inscrito = Player::find($inscrito_id);
+
+        return Response::json($inscrito);
+    }
+
+    public function deletar($inscrito_id)
+    {
+        $inscrito = Player::destroy($inscrito_id);
+
+        return Response::json($inscrito);
+    }
 }

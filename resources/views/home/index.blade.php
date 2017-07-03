@@ -7,6 +7,10 @@
 
 @section('css')
       <link href="{{ asset('css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
+
+      <link href="css/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+      <script src="js/plugins/sweetalert2/sweetalert2.min.js"></script>
+
       <meta name="_token" content="{{ csrf_token() }}" />
 @stop
 
@@ -128,7 +132,7 @@
                                         <th>J Tarde</th>
                                         <th>Aluno</th>
                                         <th>Pagame</th>
-                                        <th></th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody id="lista_inscrito" name="lista_inscrito">
@@ -276,24 +280,44 @@
 
             //deletar click
             $('#lista_inscrito').on("click", ".deletar_inscrito", function () {
+
                 var inscrito_id = $(this).val();
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                    }
-                });
+                swal({
+                    title: 'Deletar?',
+                    text: 'Tem certeza que deseja excluir o inscrito?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sim, deletar!',
+                    cancelButtonText: 'Cancelar',
+                    showLoaderOnConfirm: true,
+                    preConfirm: function () {
+                        return new Promise(function (resolve, reject) {
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                                }
+                            });
+                            $.ajax({
+                                type: "DELETE",
+                                url: url + '/' + inscrito_id,
+                                success: function (data) {
+                                    console.log(data);
 
-                $.ajax({
-                    type: "DELETE",
-                    url: url + '/' + inscrito_id,
-                    success: function (data) {
-                        console.log(data);
-
-                        $("#inscrito" + inscrito_id).remove();
+                                    $("#inscrito" + inscrito_id).remove();
+                                    resolve();
+                                },
+                                error: function (data) {
+                                    console.log('Error:', data);
+                                }
+                            });
+                        });
                     },
-                    error: function (data) {
-                        console.log('Error:', data);
-                    }
+                    allowOutsideClick: false
+                    }).then(function (email) {
+                    swal({
+                        type: 'success',
+                        title: 'Inscrito deletado!',
+                    })
                 });
             });
 
@@ -339,14 +363,19 @@
 
                         var inscrito = '<tr id="inscrito' + data.id + '"><td>' + data.id + '</td><td>' + data.nome + '</td><td>' + data.email + '</td><td>' + data.idade + '</td><td>' + data.celular + '</td><td>' + data.jogo_manha + '</td><td>' + data.jogo_tarde + '</td><td>' + data.aluno + '</td><td>' + data.pagamento + '</td>';
                         inscrito += '<td><button class="btn btn-warning btn-xs btn-detail open-modal" value=' + data.id + '>Editar</button>';
-                        inscrito += '<button class="btn btn-danger btn-xs btn-delete delete-task" value="' + data.id + '">Deletar</button></td></tr>';
+                        inscrito += '<button class="btn btn-danger btn-xs btn-delete deletar_inscrito" value="' + data.id + '">Deletar</button></td></tr>';
 
                         //user updated an existing record
                         $("#inscrito" + inscrito_id).replaceWith( inscrito );
 
                         $('#frmInscrito').trigger("reset");
 
-                        $('#myModal').modal('hide')
+                        $('#myModal').modal('hide');
+                        swal(
+                            'Alterações',
+                            'Mudanças realizadas !',
+                            'success'
+                        );
                     },
                     error: function (data) {
                         console.log('Error:', data);
@@ -357,6 +386,36 @@
             });
 
         });
+
+        function alertar(cabecalho, mensagem, tipo)
+        {
+            swal({
+                title: 'Deletar?',
+                text: 'Tem certeza que deseja excluir o inscrito?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Submit',
+                showLoaderOnConfirm: true,
+                preConfirm: function (email) {
+                    return new Promise(function (resolve, reject) {
+                    setTimeout(function() {
+                        if (email === 'taken@example.com') {
+                        reject('This email is already taken.')
+                        } else {
+                        resolve()
+                        }
+                    }, 2000)
+                    })
+                },
+                allowOutsideClick: false
+                }).then(function (email) {
+                swal({
+                    type: 'success',
+                    title: 'Ajax request finished!',
+                    html: 'Submitted email: ' + email
+                })
+            })
+        }
 
     </script>
 
