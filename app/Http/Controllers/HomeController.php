@@ -50,7 +50,7 @@ class HomeController extends Controller
         $inscrito->idade = $request->input('idade');
         $inscrito->celular = $request->input('celular');
         $inscrito->aluno = $request->input('aluno');
-        /*$inscrito->pagamento = $request->input('pagamento');*/
+        $inscrito->pagamento = $request->input('pagamento');
         $inscrito->jogo_manha = $request->input('jogo_manha');
         $inscrito->jogo_tarde = $request->input('jogo_tarde');
 

@@ -131,7 +131,7 @@
                                         <th>J Manhã</th>
                                         <th>J Tarde</th>
                                         <th>Aluno</th>
-                                        <th>Pagame</th>
+                                        <th>Pago?</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
@@ -172,52 +172,75 @@
                     <div class="modal-body">
                         <form id="frmInscrito" name="frmInscrito" class="form-horizontal" novalidate="">
 
-                            <div class="form-group error">
-                                <label for="inputTask" class="col-sm-3 control-label">Nome</label>
+                            <div class="form-group">
+                                <label for="nome" class="col-sm-3 control-label">Nome</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control has-error" id="nome" name="nome" placeholder="Nome" value="">
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">E-mail</label>
+                                <label for="email" class="col-sm-3 control-label">E-mail</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" value="">
                                 </div>
                             </div>
 
-                            <div class="form-group error">
-                                <label for="inputTask" class="col-sm-3 control-label">idade</label>
+                            <div class="form-group">
+                                <label for="idade" class="col-sm-3 control-label">Idade</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control has-error" id="idade" name="idade" placeholder="idade" value="">
+                                    <input type="text" class="form-control" id="idade" name="idade" placeholder="idade" value="">
                                 </div>
                             </div>
 
-                            <div class="form-group error">
-                                <label for="inputTask" class="col-sm-3 control-label">celular</label>
+                            <div class="form-group">
+                                <label for="celular" class="col-sm-3 control-label">Celular</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control has-error" id="celular" name="celular" placeholder="celular" value="">
+                                    <input type="text" class="form-control" id="celular" name="celular" placeholder="celular" value="">
                                 </div>
                             </div>
 
-                            <div class="form-group error">
-                                <label for="inputTask" class="col-sm-3 control-label">aluno</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control has-error" id="aluno" name="aluno" placeholder="aluno" value="">
+                            <div class="form-group">
+                                <label for="aluno" class="col-sm-3 control-label">Aluno</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" name="aluno" id="aluno">
+                                        <option value="0">Não</option>
+                                        <option value="1">Sim</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="form-group error">
-                                <label for="inputTask" class="col-sm-3 control-label">jogo_manha</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control has-error" id="jogo_manha" name="jogo_manha" placeholder="jogo_manha" value="">
+                            <div class="form-group">
+                                <label for="jogo_manha" class="col-sm-3 control-label">Jogo Manhã</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" name="jogo_manha" id="jogo_manha">
+                                        <option value="nao">Não Joga</option>
+                                        <option value="lol">League of Legends</option>
+                                        <option value="cs">Counter Strike 1.6</option>
+                                        <option value="jd">Just Dance</option>
+                                        <option value="fifa">FIFA</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="form-group error">
-                                <label for="inputTask" class="col-sm-3 control-label">jogo_tarde</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control has-error" id="jogo_tarde" name="jogo_tarde" placeholder="jogo_tarde" value="">
+                            <div class="form-group">
+                                <label for="jogo_tarde" class="col-sm-3 control-label">Jogo Tarde</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" name="jogo_tarde" id="jogo_tarde">
+                                        <option value="nao">Não Joga</option>
+                                        <option value="cs">Counter Strike 1.6</option>
+                                        <option value="jd">Just Dance</option>
+                                        <option value="fifa">FIFA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pagamento" class="col-sm-3 control-label">Pago?</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" name="pagamento" id="pagamento">
+                                        <option value="0">Não</option>
+                                        <option value="1">Sim</option>
+                                    </select>
                                 </div>
                             </div>
                         </form>
@@ -272,6 +295,7 @@
                     $('#aluno').val(data.aluno);
                     $('#jogo_manha').val(data.jogo_manha);
                     $('#jogo_tarde').val(data.jogo_tarde);
+                    $('#pagamento').val(data.pagamento);
                     $('#btn-save').val("update");
 
                     $('#myModal').modal('show');
@@ -338,7 +362,8 @@
                     celular: $('#celular').val(),
                     aluno: $('#aluno').val(),
                     jogo_manha: $('#jogo_manha').val(),
-                    jogo_tarde: $('#jogo_tarde').val()
+                    jogo_tarde: $('#jogo_tarde').val(),
+                    pagamento: $('#pagamento').val()
                 }
 
                 //used to determine the http verb to use [add=POST], [update=PUT]
@@ -360,8 +385,30 @@
                     dataType: 'json',
                     success: function (data) {
                         //console.log(data);
+                        var data_aluno, data_pagamento; 
+                        switch(data.aluno)
+                        {
+                            case 0:
+                                data_aluno = "Nao";
+                                break;
+                            default:
+                                data_aluno = "Sim";
+                                break;
+                        }
 
-                        var inscrito = '<tr id="inscrito' + data.id + '"><td>' + data.id + '</td><td>' + data.nome + '</td><td>' + data.email + '</td><td>' + data.idade + '</td><td>' + data.celular + '</td><td>' + data.jogo_manha + '</td><td>' + data.jogo_tarde + '</td><td>' + data.aluno + '</td><td>' + data.pagamento + '</td>';
+                        switch(data.pagamento)
+                        {
+                            case 0:
+                                data_pagamento = "Nao";
+                                break;
+                            default:
+                                data_pagamento = "Sim";
+                                break;
+                        }
+                        var data_jogo_manha = data.jogo_manha == "nao" ? "Nao" : data.jogo_manha;
+                        var data_jogo_tarde = data.jogo_tarde == "nao" ? "Nao" : data.jogo_tarde;
+
+                        var inscrito = '<tr id="inscrito' + data.id + '"><td>' + data.id + '</td><td>' + data.nome + '</td><td>' + data.email + '</td><td>' + data.idade + '</td><td>' + data.celular + '</td><td>' + data_jogo_manha + '</td><td>' + data_jogo_tarde + '</td><td>' + data_aluno + '</td><td>' + data_pagamento + '</td>';
                         inscrito += '<td><button class="btn btn-warning btn-xs btn-detail open-modal" value=' + data.id + '>Editar</button>';
                         inscrito += '<button class="btn btn-danger btn-xs btn-delete deletar_inscrito" value="' + data.id + '">Deletar</button></td></tr>';
 
@@ -386,36 +433,6 @@
             });
 
         });
-
-        function alertar(cabecalho, mensagem, tipo)
-        {
-            swal({
-                title: 'Deletar?',
-                text: 'Tem certeza que deseja excluir o inscrito?',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Submit',
-                showLoaderOnConfirm: true,
-                preConfirm: function (email) {
-                    return new Promise(function (resolve, reject) {
-                    setTimeout(function() {
-                        if (email === 'taken@example.com') {
-                        reject('This email is already taken.')
-                        } else {
-                        resolve()
-                        }
-                    }, 2000)
-                    })
-                },
-                allowOutsideClick: false
-                }).then(function (email) {
-                swal({
-                    type: 'success',
-                    title: 'Ajax request finished!',
-                    html: 'Submitted email: ' + email
-                })
-            })
-        }
 
     </script>
 
