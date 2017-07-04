@@ -11,11 +11,11 @@ class InscricaoController extends Controller
     public function inscricao()
     {
         $jogos = [
-            "fifa_manha" => Player::where("jogo_manha", "fifa")->count(),
-            "fifa_tarde" => Player::where("jogo_tarde", "fifa")->count(),
+            "fifa_manha" => (Player::where("jogo_manha", "fifa")->count()) >= 60 ? true : false,
+            "fifa_tarde" => (Player::where("jogo_tarde", "fifa")->count()) >= 60 ? true : false,
             "lol_manha" => (Player::where("jogo_manha", "lol")->count()) >= 60 ? true : false,
-            "cs_manha" => Player::where("jogo_manha", "cs")->count(),
-            "cs_tarde" => Player::where("jogo_tarde", "cs")->count(),
+            "cs_manha" => (Player::where("jogo_manha", "cs")->count()) >= 60 ? true : false,
+            "cs_tarde" => (Player::where("jogo_tarde", "cs")->count()) >= 60 ? true : false,
             "jd_manha" => (Player::where("jogo_manha", "jd")->count()) >= 30 ? true : false,
             "jd_tarde" => (Player::where("jogo_tarde", "jd")->count()) >= 30 ? true : false,
         ];
@@ -28,11 +28,11 @@ class InscricaoController extends Controller
         Player::create($request->all());
 
         $jogos = [
-            "fifa_manha" => Player::where("jogo_manha", "fifa")->count(),
-            "fifa_tarde" => Player::where("jogo_tarde", "fifa")->count(),
+            "fifa_manha" => (Player::where("jogo_manha", "fifa")->count()) >= 60 ? true : false,
+            "fifa_tarde" => (Player::where("jogo_tarde", "fifa")->count()) >= 60 ? true : false,
             "lol_manha" => (Player::where("jogo_manha", "lol")->count()) >= 60 ? true : false,
-            "cs_manha" => Player::where("jogo_manha", "cs")->count(),
-            "cs_tarde" => Player::where("jogo_tarde", "cs")->count(),
+            "cs_manha" => (Player::where("jogo_manha", "cs")->count()) >= 60 ? true : false,
+            "cs_tarde" => (Player::where("jogo_tarde", "cs")->count()) >= 60 ? true : false,
             "jd_manha" => (Player::where("jogo_manha", "jd")->count()) >= 30 ? true : false,
             "jd_tarde" => (Player::where("jogo_tarde", "jd")->count()) >= 30 ? true : false,
         ];

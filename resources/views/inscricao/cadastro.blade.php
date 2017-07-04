@@ -132,7 +132,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="lol" name="jogo_manha" {{ old('jogo_manha') == 'lol' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["lol_manha"])
-                                                <strike>League of Legends</strike>
+                                                <span class="text-danger"><strike>League of Legends</strike></span>
                                             @else
                                                 League of Legends
                                             @endif
@@ -141,7 +141,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="cs" name="jogo_manha" {{ old('jogo_manha') == 'cs' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["cs_manha"])
-                                                <strike>Counter Strike 1.6</strike>
+                                                <span class="text-danger"><strike> Counter Strike 1.6</strike></span>
                                             @else
                                                 Counter Strike 1.6
                                             @endif
@@ -150,7 +150,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="fifa" name="jogo_manha" {{ old('jogo_manha') == 'fifa' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["fifa_manha"])
-                                                <strike>FIFA 2016</strike>
+                                                <span class="text-danger"><strike>FIFA 2016</strike></span>
                                             @else
                                                 FIFA 2016
                                             @endif
@@ -159,7 +159,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="jd" name="jogo_manha" {{ old('jogo_manha') == 'jd' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["jd_manha"])
-                                                <strike>Just Dance 2016</strike>
+                                                <span class="text-danger"><strike>Just Dance 2016</strike></span>
                                             @else
                                                 Just Dance 2016
                                             @endif
@@ -181,7 +181,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="cs" name="jogo_tarde" {{ old('jogo_tarde') == 'cs' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["cs_tarde"])
-                                                <strike>Counter Strike 1.6</strike>
+                                                <span class="text-danger"><strike>Counter Strike 1.6</strike></span>
                                             @else
                                                 Counter Strike 1.6
                                             @endif
@@ -190,7 +190,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="fifa" name="jogo_tarde" {{ old('jogo_tarde') == 'fifa' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["fifa_tarde"])
-                                                <strike>FIFA 2016</strike>
+                                                <span class="text-danger"><strike>FIFA 2016</strike></span>
                                             @else
                                                 FIFA 2016
                                             @endif
@@ -199,7 +199,7 @@
                                         <div class="i-checks">
                                             <label class="ichecks-control"> <input type="radio" value="jd" name="jogo_tarde" {{ old('jogo_tarde') == 'jd' ? 'checked' : '' }}> <i></i>
                                             @if($jogos["jd_tarde"])
-                                                <strike>Just Dance 2016</strike>
+                                                <span class="text-danger"><strike>Just Dance 2016</strike></span>
                                             @else
                                                 Just Dance 2016
                                             @endif
@@ -259,7 +259,7 @@
                     checkboxClass: 'icheckbox_square-blue',
                     radioClass: 'iradio_square-blue',
                 });
-                $('input[type=radio][name="optionsRadios"]').change(function() {
+                /*$('input[type=radio][name="optionsRadios"]').change(function() {
                     alert("entrou");
                     if (this.value == 'nao') {
                         alert("nao");
@@ -267,7 +267,7 @@
                         
                     }
 
-                });
+                });*/
 
                 verificarTodos();
 
@@ -320,16 +320,31 @@
             });
 
             function tardeHabilitarTodos(){
+                @if(!$jogos["fifa_tarde"])
+                    $('input[type=radio][name="jogo_tarde"][value="fifa"]').iCheck('enable');
+                @endif
+                @if(!$jogos["cs_tarde"])
+                    $('input[type=radio][name="jogo_tarde"][value="cs"]').iCheck('enable');
+                @endif
+                @if(!$jogos["jd_tarde"])
+                    $('input[type=radio][name="jogo_tarde"][value="jd"]').iCheck('enable');
+                @endif
                 $('input[type=radio][name="jogo_tarde"][value="nao"]').iCheck('enable');
-                $('input[type=radio][name="jogo_tarde"][value="cs"]').iCheck('enable');
-                $('input[type=radio][name="jogo_tarde"][value="fifa"]').iCheck('enable');
-                $('input[type=radio][name="jogo_tarde"][value="jd"]').iCheck('enable');
+
             }
             function manhaHabilitarTodos(){
+
+                @if(!$jogos["fifa_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="fifa"]').iCheck('enable');
+                @endif
+                @if(!$jogos["cs_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="cs"]').iCheck('enable');
+                @endif
+                @if(!$jogos["jd_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('enable');
+                @endif
                 $('input[type=radio][name="jogo_manha"][value="nao"]').iCheck('enable');
-                $('input[type=radio][name="jogo_manha"][value="cs"]').iCheck('enable');
-                $('input[type=radio][name="jogo_manha"][value="fifa"]').iCheck('enable');
-                $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('enable');
+
             }
 
             function verificarTodos(){
@@ -370,6 +385,29 @@
                 {
                     $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('disable');
                 }
+
+                @if($jogos["fifa_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="fifa"]').iCheck('disable');
+                @endif
+                @if($jogos["cs_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="cs"]').iCheck('disable');
+                @endif
+                @if($jogos["lol_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="lol"]').iCheck('disable');
+                @endif
+                @if($jogos["jd_manha"])
+                    $('input[type=radio][name="jogo_manha"][value="jd"]').iCheck('disable');
+                @endif
+
+                @if($jogos["fifa_tarde"])
+                    $('input[type=radio][name="jogo_tarde"][value="fifa"]').iCheck('disable');
+                @endif
+                @if($jogos["cs_tarde"])
+                    $('input[type=radio][name="jogo_tarde"][value="cs"]').iCheck('disable');
+                @endif
+                @if($jogos["jd_tarde"])
+                    $('input[type=radio][name="jogo_tarde"][value="jd"]').iCheck('disable');
+                @endif
             }
 
         </script>
