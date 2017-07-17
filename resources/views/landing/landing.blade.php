@@ -75,7 +75,7 @@
                     Venha nos conhecer enquanto participa do seu jogo favorito.
                 </p>
                 <small>
-                    <strong>21 de Julho, 08:00 às 21:00</strong>
+                    <strong>28 de Julho, 08:00 às 21:00</strong>
                 </small>
             </div>
         </div> <!--/row-->
@@ -228,7 +228,7 @@
             <img src="{{ asset('img/people/just_dance.jpg') }}" alt="dashboard" class="img-responsive">
         </div>
         <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
-            <h2>Just Dance 2016</h2>
+            <h2>Just Dance 2017</h2>
             <h3>Regras</h3>
             <p>
                 O campeonato será em modalidade individual.<br>
@@ -236,11 +236,11 @@
 
                 <h3>Sistema de Jogo</h3>
                 As disputas serão entre 2 competidores, com música escolhida aleatoriamente 
-                dentre as músicas disponíveis no Just Dance 2016.<br><br>
+                dentre as músicas disponíveis no Just Dance 2017.<br><br>
 
                 <strong>Classificação:</strong> Eliminação única (o jogador ao perder uma partida será eliminado da competição, 
                 ou seja, não há repescagem).<br><br>
-                A pontuação de desempenho dos participantes é feita eletronicamente pelo sistema do Just Dance 2016 (do Xbox One). <br><br>
+                A pontuação de desempenho dos participantes é feita eletronicamente pelo sistema do Just Dance 2017 (do Xbox One). <br><br>
 
                 Não há qualquer juízo de valor ou pontuação dada por espectadores ou por integrantes da organização.<br><br>
 
@@ -260,13 +260,13 @@
         </div>        
     </div>
     <!--/JUST DANCE-->
-    <!--FIFA 2016-->
+    <!--FIFA 2017-->
     <div class="row features-block">
         <div class="col-xs-12 col-sm-4 wow fadeInLeft">
             <img src="{{ asset('img/people/fifa.jpg') }}" alt="dashboard" class="img-responsive">
         </div>
         <div class="col-xs-12 col-sm-8 games-text wow fadeInRight">
-            <h2>FIFA 2016 </h2>
+            <h2>FIFA 2017 </h2>
             <h3>Regras</h3>
             <p>O campeonato será disputado como fase de grupos, de um contra um. Será permitido escolher times iguais no mesmo torneio. 
                 Partidas do torneio são jogadas através das seguintes configurações para criação de Sala:</p>
@@ -286,7 +286,7 @@
             <br>
         </div>        
     </div>
-    <!--/FIFA 2016-->
+    <!--/FIFA 2017-->
     
 
 </section>
